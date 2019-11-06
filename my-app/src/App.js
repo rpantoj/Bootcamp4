@@ -73,9 +73,8 @@ class App extends React.Component {
     return (
       <div className="bg">
         <div className="row">
-          <h1>UF Directory App</h1>
+          <h1 id="directoryHeader">UF Directory App</h1>
         </div>
-
         <Search
         filterUpdate={this.filterUpdate.bind(this)}
         />
@@ -98,20 +97,22 @@ class App extends React.Component {
               </div>
             </div>
             <div className="column2">
-              <table>
-                <tr>
-                  <ViewBuilding
-                  data={this.state.data}
-                  selectedBuilding={this.state.selectedBuilding}
-                  removeBuilding={this.removeBuilding.bind(this)}
-                  />
-                </tr>
-                <tr>
-                  <AddBuilding
-                  addBuilding={this.addBuilding.bind(this)}
-                  />
-                </tr>
-              </table>
+              <div className="tableWrapper">
+                <table>
+                  <tr>
+                    <ViewBuilding
+                    data={this.state.data}
+                    selectedBuilding={this.state.selectedBuilding}
+                    removeBuilding={this.removeBuilding.bind(this)}
+                    />
+                  </tr>
+                  <tr>
+                    <AddBuilding
+                    addBuilding={this.addBuilding.bind(this)}
+                    />
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
           <Credit />
